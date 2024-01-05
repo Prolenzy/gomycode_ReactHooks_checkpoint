@@ -1,0 +1,131 @@
+.movie-container {
+  display: flex;
+  align-items: center; /* Vertically align items */
+  margin-bottom: 10px; /* Add some spacing between movies */
+  padding: 30px;
+}
+
+.poster {
+  width: 150px; /* Set a fixed width for the poster or adjust as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 20px; /* Add some spacing between the poster and details */
+}
+
+.movie-details {
+  flex-grow: 1; /* Allow the details to grow and occupy the available space */
+}
+
+.movie-details h2 {
+  margin-top: 0; /* Remove default margin for the title */
+  margin-bottom: 10px; /* Add some spacing between the title and description */
+}
+
+.movie-details p {
+  margin-top: 0; /* Remove default margin for the description */
+}
+
+.movie-details span {
+  font-weight: bold; /* Make the rating text bold or adjust as needed */
+}
+/* App.css */
+
+.form-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.form-input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.form-button {
+  padding: 8px 16px;
+  margin-right: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: teal;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-button:hover {
+  background-color: #0056b3;
+}
+/* Button Style */
+.add-movie-button {   
+  background-color: teal;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.add-movie-button:hover {
+  background-color: #0056b3;
+}
+
+/* Label Styles */
+.label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: uppercase;   
+}
+
+/* Input Styles */
+.filter-input {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 300px;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Rating Input Style */
+.filter-rate-input {
+  width: 300px;
+  margin-left: 10px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;        
+  justify-content: center;                    
+}
+.movie-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Space between the elements */
+  margin-top: 20px; /* Optional: Add some margin at the top */
+}
