@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import MovieCard from "./MovieCard";
 import Filter from "./Filter";
 import MovieForm from "./MovieForm";
 
 const MovieList = () => {
+    const navigate = useNavigate();
     const [movies, setMovies] = useState([]);
     const [filteredMovies, setFilteredMovies] = useState([]);
     const [filterTitle, setFilterTitle] = useState("");
@@ -24,10 +26,12 @@ const MovieList = () => {
 
                 // Extracting required details from each movie; that's title, description, posterURL, and rating.
                 const moviesData = response.data.results.map(movie => ({
+                    id: movie.id,
                     title: movie.title,
                     description: movie.overview,
                     rating: movie.vote_average,
                     posterURL: `https://image.tmdb.org/t/p/w300${movie.poster_path}`,  
+                    trailerLink: `https://www.youtube.com/embed/${movie.key}` // Assuming movie.key provides the YouTube video ID
                 }));
 
                 setMovies(moviesData);
@@ -68,6 +72,9 @@ const MovieList = () => {
         setMovies(prevMovies => [...prevMovies, newMovie]);  // Add the new movie to the list
         setIsAddingMovie(false);  // Hide the movie form
     };
+    const handleMovieClick = (movieId) => {
+        navigate.push(`/movie/${movieId}`);
+    };
 
     return (
         <div className="movie-controls"> 
@@ -87,7 +94,10 @@ const MovieList = () => {
                     )}
             <div className="movie-list">
                 {filteredMovies.map((movie) => (
-                    <MovieCard key={movie.id} movie={movie} />
+                    <MovieCard
+                    key={movie.id} 
+                    movie={movie} 
+                    onClick={() => handleMovieClick(movie.id)} />
                 ))}
             </div> 
         </div>
